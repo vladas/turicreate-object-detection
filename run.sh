@@ -1,16 +1,19 @@
 #!/bin/bash
 
-echo "Current working directory:"
+echo "\n> Current working directory:"
 pwd
 
-echo "Downloading training data..."
+echo "\n> Install dependencies..."
+./install.sh
+
+echo "\n> Downloading training data..."
 ./download_training_data.sh
 
 echo "ls -la /storage/"
 ls -la /storage/
 
-echo "Train model..."
+echo "\n> Train model..."
 python train.py
 
-echo "Reduce model size..."
+echo "\n> Reduce model size..."
 python shrink_model.py
