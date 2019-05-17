@@ -1,14 +1,19 @@
 import turicreate as tc
 import coremltools
 
+print("set_num_gpus")
 # configure the GPUs
 tc.config.set_num_gpus(0)
 
+print("Load SFrame")
 # Load SFrame
 data = tc.SFrame('/storage/xy_signs.sframe')
 
+print("split")
 # Make a train-test split
 train_data, test_data = data.random_split(0.8)
+
+print("create and train")
 # Create and train model
 model = tc.object_detector.create(train_data)
 model.evaluate(test_data)
