@@ -2,7 +2,7 @@ import turicreate as tc
 import coremltools
 
 # configure the GPUs
-tc.config.set_num_gpus(-1)
+tc.config.set_num_gpus(0)
 
 # Load SFrame
 data = tc.SFrame('/storage/xy_signs.sframe')

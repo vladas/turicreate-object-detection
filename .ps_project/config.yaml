@@ -18,7 +18,7 @@ paths:
 worker:
   container: "vladas/turicreate-object-detection:latest"
   command: "./run.sh"
-  machine-type: "K80"
+  machine-type: "C7"
   count: 1 # [required for multi-node]
 #parameter-server: # [required for multi-node]
 #  container: "tensorflow/tensorflow:1.8.0-gpu"
